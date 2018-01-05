@@ -48,7 +48,7 @@ class SetLabels extends ExecuteCypherQuery
 
 		$setCommand = $remove ? 'REMOVE' : 'SET';
 
-		$query = "START n=node({nodeId}) {$setCommand} n:{$labelSet} RETURN labels(n) AS labels";
+		$query = "MATCH (n) WHERE id(n)={nodeId} {$setCommand} n:{$labelSet} RETURN labels(n) AS labels";
 		$params = array('nodeId' => $nodeId);
 
 		$cypher = new Query($client, $query, $params);
