@@ -31,6 +31,9 @@ class Query implements Neo4j\Query
 		$this->client = $client;
 		$this->template = $template;
 		$this->vars = $vars;
+		foreach($this->vars as $k=>$v)
+			if (is_array($v))
+				$this->vars[$k]=array_values($v);
 	}
 
 	/**
