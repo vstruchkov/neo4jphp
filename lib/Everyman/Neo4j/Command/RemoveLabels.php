@@ -3,8 +3,7 @@ namespace Everyman\Neo4j\Command;
 
 use Everyman\Neo4j\Command\SetLabels,
 	Everyman\Neo4j\Client,
-	Everyman\Neo4j\Node,
-	Everyman\Neo4j\Label;
+	Everyman\Neo4j\Node;
 
 /**
  * Remove a set of labels from a node
